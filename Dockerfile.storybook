@@ -1,0 +1,15 @@
+# Dockerfile.storybook
+FROM node:18-alpine AS build
+
+WORKDIR /app
+
+COPY package.json .
+
+RUN npm install
+
+COPY . .
+
+RUN npm run build
+
+# Start Storybook
+CMD ["npm", "run", "storybook", "--", "--no-open", "-p", "6006"]
