@@ -13,7 +13,7 @@ RUN npm run build
 FROM nginx:alpine
 
 # Copy the build output from the first stage to Nginx's default static directory
-COPY --from=build /Hung-Sheng_Lee_ui_garden/build /usr/share/nginx/html
+COPY --from=build /Hung-Sheng_Lee_ui_garden_build_checks/build /usr/share/nginx/html
 
 # Expose port 80 to the outside world
 EXPOSE 80
