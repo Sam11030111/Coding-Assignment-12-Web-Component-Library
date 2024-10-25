@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import Button from "./Button";
 
+// Testing
 test("Button is visible", () => {
   render(<Button>Click Me</Button>);
   const buttonElement = screen.getByText(/click me/i);

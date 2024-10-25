@@ -27,7 +27,7 @@
     "prepare": "husky",
     "prettier": "prettier --write 'src/**/*.{js,jsx,ts,tsx,json,css,md}'",
     "eslint": "eslint 'src/**/*.{js,jsx,ts,tsx}' --fix",
-    "test": "react-scripts test",
+    "test": "react-scripts test --watchAll=false",
     "pre-commit": "npm run prettier && npm run eslint && npm run test"
   },
   "eslintConfig": {
