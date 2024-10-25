@@ -11,7 +11,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Build the React app
-        run: docker-compose build
+        run: docker compose build
       - name: Run Prettier
         run: docker compose run --rm react npm run prettier -- --check
       - name: Run ESLint
