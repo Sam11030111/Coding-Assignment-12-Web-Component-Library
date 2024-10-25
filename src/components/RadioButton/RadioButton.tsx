@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import { RadioButtonProps } from './RadioButton.types';
+import React, { useState } from "react";
+import styled from "styled-components";
+import { RadioButtonProps } from "./RadioButton.types";
 
 // Styled components for radio group, labels, and inputs
 const StyledRadioButtonGroup = styled.div<{ disabled?: boolean }>`
   display: flex;
   flex-direction: column;
-  background-color: ${({ disabled }) => (disabled ? 'lightgray' : 'white')};
+  background-color: ${({ disabled }) => (disabled ? "lightgray" : "white")};
   padding: 8px;
   border: 1px solid #ccc;
-  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'default')};
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "default")};
 `;
 
 const RadioButtonLabel = styled.label<{ disabled?: boolean }>`
-  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
   margin-bottom: 8px;
 `;
 
@@ -23,14 +23,16 @@ const RadioButtonInput = styled.input`
 
 // RadioButton component
 const RadioButton: React.FC<RadioButtonProps> = ({ items, disabled }) => {
-  const [selectedValue, setSelectedValue] = useState<string | undefined>(undefined);
+  const [selectedValue, setSelectedValue] = useState<string | undefined>(
+    undefined,
+  );
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedValue(event.target.value);
   };
 
   return (
-    <StyledRadioButtonGroup  role='group' disabled={disabled}>
+    <StyledRadioButtonGroup role="group" disabled={disabled}>
       {items.map((item) => (
         <RadioButtonLabel key={item.value} disabled={disabled}>
           <RadioButtonInput
@@ -50,4 +52,3 @@ const RadioButton: React.FC<RadioButtonProps> = ({ items, disabled }) => {
 };
 
 export default RadioButton;
-

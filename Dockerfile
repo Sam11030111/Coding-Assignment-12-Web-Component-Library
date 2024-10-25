@@ -1,6 +1,6 @@
 FROM node:18-alpine AS build
 
-WORKDIR /Hung-Sheng_Lee_ui_garden
+WORKDIR /Hung-Sheng_Lee_ui_garden_build_checks
 
 COPY package.json .
 

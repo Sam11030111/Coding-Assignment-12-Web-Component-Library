@@ -3,5 +3,3 @@ export interface ButtonProps {
   disabled?: boolean;
   bgColor?: string;
 }
-
-  

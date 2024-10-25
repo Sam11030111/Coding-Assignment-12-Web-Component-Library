@@ -1,24 +1,31 @@
-import React from 'react';
-import styled from 'styled-components';
-import { TableProps } from './Table.types';
-import TableHeader from './TableHeader';
-import TableRow from './TableRow';
-import TableCell from './TableCell';
-import TableFooter from './TableFooter';
+import React from "react";
+import styled from "styled-components";
+import { TableProps } from "./Table.types";
+import TableHeader from "./TableHeader";
+import TableRow from "./TableRow";
+import TableCell from "./TableCell";
+import TableFooter from "./TableFooter";
 
 const StyledTable = styled.table<{ disabled?: boolean }>`
   width: 100%;
   border-collapse: collapse;
-  background-color: ${({ disabled }) => (disabled ? 'lightgray' : 'white')};
+  background-color: ${({ disabled }) => (disabled ? "lightgray" : "white")};
 `;
 
-const Table: React.FC<TableProps> = ({ tableHeader, tableRows, tableFooter, disabled }) => {
+const Table: React.FC<TableProps> = ({
+  tableHeader,
+  tableRows,
+  tableFooter,
+  disabled,
+}) => {
   return (
     <StyledTable disabled={disabled}>
       <TableHeader>
         <TableRow>
           {tableHeader.map((header, index) => (
-            <th key={index} style={{ color: header.color }}>{header.text}</th>
+            <th key={index} style={{ color: header.color }}>
+              {header.text}
+            </th>
           ))}
         </TableRow>
       </TableHeader>
@@ -26,7 +33,9 @@ const Table: React.FC<TableProps> = ({ tableHeader, tableRows, tableFooter, disa
         {tableRows.map((row, rowIndex) => (
           <TableRow key={rowIndex} disabled={disabled}>
             {row.map((cell, cellIndex) => (
-              <TableCell key={cellIndex} disabled={disabled} color={cell.color}>{cell.text}</TableCell> 
+              <TableCell key={cellIndex} disabled={disabled} color={cell.color}>
+                {cell.text}
+              </TableCell>
             ))}
           </TableRow>
         ))}
@@ -34,7 +43,9 @@ const Table: React.FC<TableProps> = ({ tableHeader, tableRows, tableFooter, disa
       <TableFooter>
         <TableRow>
           {tableFooter.map((footer, index) => (
-            <TableCell key={index} color={footer.color}>{footer.text}</TableCell>
+            <TableCell key={index} color={footer.color}>
+              {footer.text}
+            </TableCell>
           ))}
         </TableRow>
       </TableFooter>
@@ -43,4 +54,3 @@ const Table: React.FC<TableProps> = ({ tableHeader, tableRows, tableFooter, disa
 };
 
 export default Table;
-

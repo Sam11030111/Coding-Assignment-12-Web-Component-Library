@@ -2,12 +2,12 @@ version: '3.8'
 
 services:
   react:
-    container_name: Hung-Sheng_Lee_coding_assignment12
+    container_name: Hung-Sheng_Lee_coding_assignment13
     build:
       context: .
       dockerfile: Dockerfile 
     ports:
-      - "8083:80"
+      - "8018:80"
 
   storybook:
     container_name: Hung-Sheng_Lee_coding_assignment12_storybook

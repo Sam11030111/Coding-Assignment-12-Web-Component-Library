@@ -1,7 +1,6 @@
 export interface HeroImageProps {
-    src: string;    
-    alt: string;   
-    text: string;  
-    disabled?: boolean;
+  src: string;
+  alt: string;
+  text: string;
+  disabled?: boolean;
 }
-  

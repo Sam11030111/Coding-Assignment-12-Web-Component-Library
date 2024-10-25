@@ -1,24 +1,30 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import { DropdownProps } from './Dropdown.types';
+import React, { useState } from "react";
+import styled from "styled-components";
+import { DropdownProps } from "./Dropdown.types";
 
 const StyledDropdown = styled.select<{ disabled?: boolean }>`
   padding: 8px;
   border: 1px solid #ccc;
-  background-color: ${({ disabled }) => (disabled ? 'lightgray' : 'white')};
-  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
-  color: ${({ disabled }) => (disabled ? 'darkgray' : 'black')};
+  background-color: ${({ disabled }) => (disabled ? "lightgray" : "white")};
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
+  color: ${({ disabled }) => (disabled ? "darkgray" : "black")};
 `;
 
 const Dropdown: React.FC<DropdownProps> = ({ items, disabled }) => {
-  const [selectedItem, setSelectedItem] = useState<string | undefined>(undefined);
+  const [selectedItem, setSelectedItem] = useState<string | undefined>(
+    undefined,
+  );
 
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedItem(event.target.value);
   };
 
   return (
-    <StyledDropdown disabled={disabled} value={selectedItem} onChange={handleChange}>
+    <StyledDropdown
+      disabled={disabled}
+      value={selectedItem}
+      onChange={handleChange}
+    >
       <option value="" disabled>
         Select an option
       </option>

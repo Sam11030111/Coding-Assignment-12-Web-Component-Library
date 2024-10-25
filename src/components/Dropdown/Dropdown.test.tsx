@@ -1,31 +1,31 @@
-import { render, screen } from '@testing-library/react';
-import Dropdown from './Dropdown';
+import { render, screen } from "@testing-library/react";
+import Dropdown from "./Dropdown";
 
-test('Dropdown is visible', () => {
+test("Dropdown is visible", () => {
   render(
     <Dropdown
       items={[
-        { label: 'Option 1', value: 'option1' },
-        { label: 'Option 2', value: 'option2' },
+        { label: "Option 1", value: "option1" },
+        { label: "Option 2", value: "option2" },
       ]}
-    />
+    />,
   );
 
-  const dropdownElement = screen.getByRole('combobox');
+  const dropdownElement = screen.getByRole("combobox");
   expect(dropdownElement).toBeVisible();
 });
 
-test('Dropdown background color changes when disabled', () => {
+test("Dropdown background color changes when disabled", () => {
   render(
     <Dropdown
       disabled={true}
       items={[
-        { label: 'Option 1', value: 'option1' },
-        { label: 'Option 2', value: 'option2' },
+        { label: "Option 1", value: "option1" },
+        { label: "Option 2", value: "option2" },
       ]}
-    />
+    />,
   );
 
-  const dropdownElement = screen.getByRole('combobox');
-  expect(dropdownElement).toHaveStyle('background-color: lightgray');
+  const dropdownElement = screen.getByRole("combobox");
+  expect(dropdownElement).toHaveStyle("background-color: lightgray");
 });

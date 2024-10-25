@@ -1,15 +1,15 @@
-import React from 'react';
-import styled from 'styled-components';
-import { ImgProps } from './Img.types';
+import React from "react";
+import styled from "styled-components";
+import { ImgProps } from "./Img.types";
 
 // Styled component for the image container
 const StyledImgContainer = styled.div<{ disabled?: boolean }>`
-   display: inline-block;
-  background-color: ${({ disabled }) => (disabled ? 'lightgray' : '#ccc')};
+  display: inline-block;
+  background-color: ${({ disabled }) => (disabled ? "lightgray" : "#ccc")};
   padding: 8px;
   width: 300px;
   border-radius: 8px;
-  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')}
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
 `;
 
 // Styled image element

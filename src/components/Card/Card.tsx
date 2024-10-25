@@ -1,17 +1,19 @@
-import React from 'react';
-import styled from 'styled-components';
-import { CardProps } from './Card.types';
+import React from "react";
+import styled from "styled-components";
+import { CardProps } from "./Card.types";
 
 // Styled component for the Card container
 const StyledCardContainer = styled.div<{ disabled?: boolean }>`
   width: 300px;
   padding: 10px;
-  background-color: ${({ disabled }) => (disabled ? 'lightgray' : 'white')};
+  background-color: ${({ disabled }) => (disabled ? "lightgray" : "white")};
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
   opacity: ${({ disabled }) => (disabled ? 0.5 : 1)};
-  transition: background-color 0.3s ease, opacity 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    opacity 0.3s ease;
 `;
 
 // Styled image element for the Card
@@ -36,7 +38,12 @@ const StyledCardDescription = styled.p`
   color: #666;
 `;
 
-const Card: React.FC<CardProps> = ({ imageSrc, title, description, disabled }) => {
+const Card: React.FC<CardProps> = ({
+  imageSrc,
+  title,
+  description,
+  disabled,
+}) => {
   return (
     <StyledCardContainer data-testid="card-container" disabled={disabled}>
       <StyledCardImage src={imageSrc} alt={title} disabled={disabled} />

@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import { HeroImageProps } from './HeroImage.types';
+import React from "react";
+import styled from "styled-components";
+import { HeroImageProps } from "./HeroImage.types";
 
 // Container for the Hero Image and Text
 const StyledHeroImageContainer = styled.div<{ disabled?: boolean }>`
@@ -9,8 +9,8 @@ const StyledHeroImageContainer = styled.div<{ disabled?: boolean }>`
   height: 300px;
   padding: 10px;
   border-radius: 8px;
-  background-color: ${({ disabled }) => (disabled ? 'lightgray' : '#ccc')};
-  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
+  background-color: ${({ disabled }) => (disabled ? "lightgray" : "#ccc")};
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
   overflow: hidden;
 `;
 
@@ -36,7 +36,10 @@ const StyledHeroText = styled.div<{ disabled?: boolean }>`
 
 const HeroImage: React.FC<HeroImageProps> = ({ src, alt, text, disabled }) => {
   return (
-    <StyledHeroImageContainer data-testid="hero-image-container" disabled={disabled}>
+    <StyledHeroImageContainer
+      data-testid="hero-image-container"
+      disabled={disabled}
+    >
       <StyledHeroImage src={src} alt={alt} disabled={disabled} />
       <StyledHeroText disabled={disabled}>{text}</StyledHeroText>
     </StyledHeroImageContainer>
