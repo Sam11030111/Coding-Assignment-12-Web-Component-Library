@@ -10,11 +10,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Build Docker containers
-        run: docker-compose build
       - name: Run Prettier
-        run: docker-compose run --rm react npm run prettier -- --check
+        run: docker compose run --rm react npm run prettier -- --check
       - name: Run ESLint
-        run: docker-compose run --rm react npm run eslint
+        run: docker compose run --rm react npm run eslint
       - name: Run Tests
-        run: docker-compose run --rm react npm test
+        run: docker compose run --rm react npm test
