@@ -1,0 +1,18 @@
+---
+name: Checks
+
+on: [push]
+
+jobs:
+  test-lint:
+    name: Test and Lint
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Run Prettier
+        run: npm run prettier -- --check
+      - name: Run ESLint
+        run: npm run eslint
+      - name: Run Tests
+        run: npm test
