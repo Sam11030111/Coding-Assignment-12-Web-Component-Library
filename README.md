@@ -1,6 +1,6 @@
-# Hung-Sheng Lee Coding Assignment 12
+# Hung-Sheng Lee Coding Assignment 13
 
-This is a React web application that has been dockerized for easy setup. Follow the instructions below to get the application up and running on `localhost:8083`.
+This is a React web application that has been dockerized for easy setup and is integrated with GitHub Actions for automated code quality checks. Follow the instructions below to get the application up and running on `localhost:8018`.
 
 ## Getting Started
 
@@ -16,17 +16,29 @@ This is a React web application that has been dockerized for easy setup. Follow 
 
    ```bash
    docker-compose up
-4. Once the container is up, the application will be running on http://localhost:8083.
+4. Once the container is up, the application will be running on http://localhost:8018.
 
 ## Dockerfile Overview
 - The Dockerfile is based on the node image.
 - After building the application for production, we use Nginx as a web server to serve the static files. We then expose port 80 for external access and start the Nginx server to serve the application.
 
 ## Docker Compose Overview
-- The service is named frontend with a custom container name Hung-Sheng_Lee_coding_assignment11.
-- The application will run on port 8083 mapped to the container’s port 80.
+- The service is named frontend with a custom container name Hung-Sheng_Lee_coding_assignment13.
+- The application will run on port 8018 mapped to the container’s port 80.
 
 ## Stop the application
 To stop the running container, use:
    ```bash
    docker-compose down
+   ```
+
+## GitHub Actions
+
+This project includes a **GitHub Actions** workflow that automatically performs the following tasks on each push:
+
+- **Prettier**: Checks code formatting.
+- **ESLint**: Analyzes code for potential errors and ensures adherence to coding standards.
+- **Tests**: Runs unit tests to verify application functionality.
+
+You can view the results of these checks in the "Actions" tab of your GitHub repository.
+
