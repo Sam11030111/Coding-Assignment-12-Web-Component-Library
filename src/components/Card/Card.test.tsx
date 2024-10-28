@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import Card from "./Card";
 
+// Test for Card
 test("Card is visible", () => {
   render(
     <Card
