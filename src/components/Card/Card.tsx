@@ -38,10 +38,17 @@ const StyledCardDescription = styled.p`
   color: #666;
 `;
 
+// Styled description for the Card
+const StyledCardLink = styled.a`
+  font-size: 16px;
+  color: blue;
+`;
+
 const Card: React.FC<CardProps> = ({
   imageSrc,
   title,
   description,
+  link,
   disabled,
 }) => {
   return (
@@ -49,6 +56,7 @@ const Card: React.FC<CardProps> = ({
       <StyledCardImage src={imageSrc} alt={title} disabled={disabled} />
       <StyledCardTitle>{title}</StyledCardTitle>
       <StyledCardDescription>{description}</StyledCardDescription>
+      <StyledCardLink href={link}>{link}</StyledCardLink>
     </StyledCardContainer>
   );
 };
