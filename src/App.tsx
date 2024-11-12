@@ -105,6 +105,9 @@ function App() {
           Use Zsh with the Oh My Zsh framework, customized the theme for better
           command visibility.
         </Text>
+        <Text color="#333">
+          Random
+        </Text>
       </section>
     </div>
   );
