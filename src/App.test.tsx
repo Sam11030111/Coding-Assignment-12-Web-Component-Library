@@ -20,7 +20,7 @@ test("renders Skills section heading", () => {
   render(<App />);
   const skillsHeading = screen.getByRole("heading", {
     level: 2,
-    name: /Skills/i,
+    name: /Skill/i,
   });
   expect(skillsHeading).toBeInTheDocument();
 });
@@ -29,7 +29,7 @@ test("renders Resources section heading", () => {
   render(<App />);
   const resourcesHeading = screen.getByRole("heading", {
     level: 2,
-    name: /Resources/i,
+    name: /Resource/i,
   });
   expect(resourcesHeading).toBeInTheDocument();
 });
